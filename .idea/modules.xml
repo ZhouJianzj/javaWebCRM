@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/javaPage/javaPage.iml" filepath="$PROJECT_DIR$/javaPage/javaPage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaPageTwo/javaPageTwo.iml" filepath="$PROJECT_DIR$/javaPageTwo/javaPageTwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaWebCRM/javaWebCRM.iml" filepath="$PROJECT_DIR$/javaWebCRM/javaWebCRM.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaWebCRM-mybatis/javaWebCRM-mybatis.iml" filepath="$PROJECT_DIR$/javaWebCRM-mybatis/javaWebCRM-mybatis.iml" />
     </modules>

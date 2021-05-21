@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/javaPage" />
+    <file type="web" url="file://$PROJECT_DIR$/javaPageTwo" />
     <file type="web" url="file://$PROJECT_DIR$/javaWebCRM" />
   </component>
   <component name="MavenProjectsManager">
@@ -9,6 +11,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/javaWebCRM-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/javaWebCRM/pom.xml" />
+        <option value="$PROJECT_DIR$/javaPage/pom.xml" />
+        <option value="$PROJECT_DIR$/javaPageTwo/pom.xml" />
       </list>
     </option>
   </component>

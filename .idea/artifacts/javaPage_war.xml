@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="javaPage:war">
+    <output-path>$PROJECT_DIR$/javaPage/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>javaPage</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="javaPage.war">
+      <element id="artifact" artifact-name="javaPage:war exploded" />
+    </root>
+  </artifact>
+</component>
