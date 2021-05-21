@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zj.dao.StudentDao">
+<!--    有resultType="" parameterType=""属性，resultType返回值必须是全路径 -->
+    <select id="select" resultType="com.zj.entities.Student" >
+        <!--#{id} 需要的是和传入参数保持一致，方法参数中取的名字Param（“id”）int id
+    传递的是对象的话就是直接是对象中的属性的名字
+-->  select name from student
+    </select>
+
+<!--   一一般只写id，其他的不写 paremeterType是使用对象的setterAndGetter赋值的-->
+    <insert id="insert" parameterType="com.zj.entities.Student" >
+        insert into student(id,name,age) values(#{id},#{name},#{age})
+    </insert>
+
+<!--   更新 -->
+    <update id="update" parameterType="com.zj.entities.Student">
+        update student set name = #{name} where id =#{id}
+    </update>
+
+<!--   删除 -->
+    <delete id="delete" >
+        delete  from student where id = #{id}
+    </delete>
+
+
+<sql id="select">
+    select id ,name ,age from student
+</sql>
+
+<!--使用resultMap-->
+    <!-- resultMap是下面的id-->
+    <select id="selectOne" resultType="com.zj.entities.Student"  resultMap="stu">
+        select id ,name ,age from student
+    </select>
+    <!--type:也就是上面的resultType-->
+    <resultMap id="stu" type="com.zj.entities.Student">
+        <id property="id" column="id"></id>
+        <result property="userName" column="name"/>
+        <result property="age" column="age"/>
+    </resultMap>
+<!--使用as取别名的方法-->
+    <select id="selectTwo" resultType="com.zj.entities.Student">
+        select
+            id ,
+            name as userName,
+            age
+        from
+             student
+    </select>
+<!--返回值是一个map-->
+    <select id="selectThree" resultType="map">
+        <include refid="select"/>
+    </select>
+<!--没有具体的实体类为返回值-->
+    <select id="selectFour" resultType="map">
+        select
+         course.id,
+         course.coursename,
+         class.name
+         from
+        course
+        join
+        class
+        on
+        course.classid = class.id
+    </select>
+<!-- 使用in-->
+    <!--当这里的返回值是Student的时候中的一个userName属性不匹配，不会报错只会这个userName为null-->
+    <select id="selectFive" parameterType="list" resultType="com.zj.entities.Student">
+        select id,name,age from student where id in
+        <foreach collection="list" open="(" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </select>
+<!--模糊查询-->
+    <!--这里遇见一个问题就是，你指定了输入值是string的时候，使用的命名和你的返回值对象的属性命名一样的时候会报错
+        这里的列子的就是 userName 解决方案：在接口中使用@Param("alias")取别名的方式-->
+    <select id="selectSix" resultType="com.zj.entities.Student" parameterType="String">
+        select id,name as userName ,age from student
+         <where>
+             <if test="userName!=null and userName!=''">
+                 name like '%' #{userName}
+             </if>
+         </where>
+    </select>
+</mapper>
