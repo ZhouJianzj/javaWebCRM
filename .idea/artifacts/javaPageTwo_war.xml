@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="javaPageTwo:war">
+    <output-path>$PROJECT_DIR$/javaPageTwo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>javaPageTwo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="javaPageTwo.war">
+      <element id="artifact" artifact-name="javaPageTwo:war exploded" />
+    </root>
+  </artifact>
+</component>
