@@ -1,5 +1,7 @@
 package com.zj.settings.dao;
 
+import com.zj.settings.doMain.User;
+
 public interface UserDao {
-    int select();
+    User select(User user);
 }

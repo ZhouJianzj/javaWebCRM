@@ -1,0 +1,27 @@
+一、login模块
+    1、异常处理的使用
+        1）自定义异常继承Exception，
+        2）细分到具体的自定义异常继承自定义的父类
+        3）创建处理器放到handle包下，springmvmc.xml配置扫描器到这个包
+        4）异常处理器继承InvocationHandle,类前面加上@ControllerAdvoice,方法前加上@HandleException(xx.class)
+        5) 在controller包下的使用有异常就throw出来
+    2、动态代理实现Spring的作用
+        1）具体的体现在Service层
+        2）使用的包有factory，service，proxyhandle
+        3）service是写接口的，也是jdk动态代理的关键
+        4）factory是实现service的
+        5）proxyhandle是为了增加功能，对数据的加工的，此类需要实现InvocationHandle和当中的方法，还需一个构造方法传递factory对象
+        6）使用就是自己封装的工具类，需要两个参数是factory，invocation，工具类中使用Proxy.newInterface(classLoation,interface,invocation)
+           再进行转型获取到代理出的对象
+
+    3、封装的sqlSession工具类
+        1）指定配置文件，获取InputStream流
+        2）创建一个SqlSessionFactroyBulider对象bulid(InputStream)出一个factory
+        3）factory.openSession或sqlSession
+        4) 这里不是工具类里的是具体的使用 ： sqlSession.getMapper(xxDao.class)的方式获取Dao层的虚拟实现类
+    4、MD5的数据加密技术
+        1）只需要输入参数就可
+        2）String pwd：所需要加密的字符串
+           boolean isUpper：是否区分大小写
+           Integer bit：明文需要多少位
+    5、

@@ -7,6 +7,9 @@
     <settings>
         <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
+    <typeAliases>
+        <package name="com.zj.settings.doMain"/>
+    </typeAliases>
     <environments default="databaseOne_managerSystem">
         <environment id="databaseOne_managerSystem">
             <transactionManager type="JDBC"/>

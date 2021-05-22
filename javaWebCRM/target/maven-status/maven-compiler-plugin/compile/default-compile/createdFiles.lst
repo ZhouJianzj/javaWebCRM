@@ -1,0 +1,6 @@
+com\zj\settings\doMain\User.class
+com\zj\settings\dao\UserDao.class
+com\zj\settings\util\MD5Util.class
+com\zj\settings\util\SqlSessionUtil.class
+com\zj\settings\util\DateUtil.class
+com\zj\settings\service\UserService.class

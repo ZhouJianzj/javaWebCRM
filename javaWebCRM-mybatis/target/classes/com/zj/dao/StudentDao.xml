@@ -76,6 +76,8 @@
         </foreach>
     </select>
 <!--模糊查询-->
+    <!--这里遇见一个问题就是，你指定了输入值是string的时候，使用的命名和你的返回值对象的属性命名一样的时候会报错
+        这里的列子的就是 userName 解决方案：在接口中使用@Param("alias")取别名的方式-->
     <select id="selectSix" resultType="com.zj.entities.Student" parameterType="String">
         select id,name as userName ,age from student
          <where>

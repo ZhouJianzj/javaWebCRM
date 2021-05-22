@@ -6,15 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="javaWebCRM-mybatis" />
         <module name="javaWebCRM" />
         <module name="javaPageTwo" />
         <module name="javaPage" />
-        <module name="javaWebCRM-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="javaPage" target="1.7" />
-      <module name="javaPageTwo" target="1.7" />
+      <module name="javaPageTwo" target="1.8" />
       <module name="javaWebCRM" target="8" />
       <module name="javaWebCRM-mybatis" target="8" />
     </bytecodeTargetLevel>
